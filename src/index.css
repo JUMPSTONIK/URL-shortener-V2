@@ -4,7 +4,16 @@
     margin: 0;
 }
 
-.logo {
-    width: 120px;
-    height: 33px;
+html {
+    font-size: 62.5%;
+}
+
+p,
+li {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.MuiMenu-paper {
+    background-color: aqua;
 }
