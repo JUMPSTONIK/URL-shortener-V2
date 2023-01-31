@@ -14,6 +14,7 @@ import {
     NavigationLinksStylesDesk,
     NavigationLinksStylesMobile,
     NavigationButtonsStyles,
+    menuItemStyles,
 } from '../Constants/Variables';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { LogoBlack } from '../Components/LogoBlack';
@@ -62,7 +63,8 @@ export const Header = () => {
                         </Box>
                         <Box
                             sx={{
-                                alignItems: 'center',
+                                display: 'flex',
+                                gap: '26px',
                                 marginLeft: 'auto',
                             }}
                         >
@@ -70,7 +72,11 @@ export const Header = () => {
                                 sx={NavigationButtonsStyles({
                                     textColor: '#9E9AA8',
                                     backgroundColor: '',
+                                    height: '',
                                     width: '',
+                                    radius: '5rem',
+                                    padding: '0.5rem 1rem',
+                                    fontSize: '1.5rem',
                                 })}
                             >
                                 Login
@@ -79,7 +85,11 @@ export const Header = () => {
                                 sx={NavigationButtonsStyles({
                                     textColor: '#fff',
                                     backgroundColor: '#2BD0D0',
-                                    width: '',
+                                    height: '40px',
+                                    width: '105px',
+                                    radius: '5rem',
+                                    padding: '0.9rem 2.4rem',
+                                    fontSize: '1.5rem',
                                 })}
                             >
                                 Sign up
@@ -107,7 +117,7 @@ export const Header = () => {
                             TransitionComponent={Fade}
                             sx={{
                                 '& .MuiMenu-paper': {
-                                    backgroundColor: '#4B3F6B',
+                                    backgroundColor: '#3A3054',
                                     width: '90%',
                                 },
                             }}
@@ -116,35 +126,42 @@ export const Header = () => {
                                 <MenuItem
                                     key={linkName}
                                     onClick={handleClose}
-                                    sx={NavigationLinksStylesMobile}
+                                    sx={menuItemStyles}
                                 >
-                                    <Typography>{linkName}</Typography>
+                                    <Link
+                                        href="#"
+                                        sx={NavigationLinksStylesMobile}
+                                    >
+                                        {linkName}
+                                    </Link>
                                 </MenuItem>
                             ))}
                             <Divider />
-                            <MenuItem
-                                onClick={handleClose}
-                                sx={NavigationLinksStylesMobile}
-                            >
+                            <MenuItem onClick={handleClose} sx={menuItemStyles}>
                                 <Button
                                     sx={NavigationButtonsStyles({
                                         textColor: '#fff',
                                         backgroundColor: '',
+                                        height: '',
                                         width: '90%',
+                                        radius: '5rem',
+                                        padding: '0.8rem 1rem',
+                                        fontSize: '1.8rem',
                                     })}
                                 >
                                     Login
                                 </Button>
                             </MenuItem>
-                            <MenuItem
-                                onClick={handleClose}
-                                sx={NavigationLinksStylesMobile}
-                            >
+                            <MenuItem onClick={handleClose} sx={menuItemStyles}>
                                 <Button
                                     sx={NavigationButtonsStyles({
                                         textColor: '#fff',
                                         backgroundColor: '#2BD0D0',
+                                        height: '',
                                         width: '90%',
+                                        radius: '5rem',
+                                        padding: '0.8rem 1rem',
+                                        fontSize: '1.8rem',
                                     })}
                                 >
                                     Sign up

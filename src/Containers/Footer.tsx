@@ -9,12 +9,13 @@ export const Footer = () => {
         <Box
             component={`footer`}
             sx={{
-                height: '310px',
+                minHeight: '310px',
+                height: '100%',
                 backgroundColor: '#34313D',
                 display: 'flex',
-                alignItems: 'center',
+                alignItems: 'start',
                 justifyContent: 'center',
-                padding: `${match ? '0 11.5%' : '40px 28px 0'}`,
+                padding: `${match ? '71px 11.5%' : '54px 28px 56px'}`,
             }}
         >
             <Box
@@ -22,7 +23,8 @@ export const Footer = () => {
                     width: '100%',
                     display: 'flex',
                     flexDirection: `${match ? 'row' : ' column'}`,
-                    justifyContent: 'space-evenly',
+                    gap: `${match ? '101px' : '40px'}`,
+                    textAlign: 'center',
                 }}
             >
                 <LogoWhite />

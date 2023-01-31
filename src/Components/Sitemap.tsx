@@ -1,15 +1,17 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useMediaQuery } from '@mui/material';
 import { sitemapType } from '../types/sitemapType';
 
 export const Sitemap = (props: sitemapType) => {
+    const match = useMediaQuery('(min-width: 678px)');
     return (
         <Box
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '12px',
-                height: '166px',
+                height: 'fit-content',
+                textAlign: `${!match ? 'center' : 'left'}`,
             }}
         >
             <Typography
