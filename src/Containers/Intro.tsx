@@ -8,12 +8,27 @@ import { NavigationButtonsStyles } from '../Constants/Variables';
 export const Intro = () => {
     const match = useMediaQuery('(min-width: 678px)');
     return (
-        <Box component={`section`}>
+        <Box
+            component={`section`}
+            sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+            }}
+        >
             <IllustrationWorking
+                translateX={'24px'}
                 width={`${match ? '733' : '327'}`}
                 height={`${match ? '482' : '270'}`}
             />
-            <Box>
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                }}
+            >
                 <Typography component={`h1`}>
                     More than just shorter links
                 </Typography>

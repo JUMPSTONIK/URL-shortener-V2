@@ -82,6 +82,8 @@ export const Header = () => {
                                 Login
                             </Button>
                             <Button
+                                // disableRipple
+                                style={{ backgroundColor: '#2BD0D0' }}
                                 sx={NavigationButtonsStyles({
                                     textColor: '#fff',
                                     backgroundColor: '#2BD0D0',
@@ -115,10 +117,14 @@ export const Header = () => {
                             open={open}
                             onClose={handleClose}
                             TransitionComponent={Fade}
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                            }}
                             sx={{
                                 '& .MuiMenu-paper': {
                                     backgroundColor: '#3A3054',
-                                    width: '90%',
+                                    width: '100%',
                                 },
                             }}
                         >
@@ -154,6 +160,7 @@ export const Header = () => {
                             </MenuItem>
                             <MenuItem onClick={handleClose} sx={menuItemStyles}>
                                 <Button
+                                    style={{ backgroundColor: '#2BD0D0' }}
                                     sx={NavigationButtonsStyles({
                                         textColor: '#fff',
                                         backgroundColor: '#2BD0D0',
