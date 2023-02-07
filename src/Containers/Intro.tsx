@@ -1,7 +1,5 @@
 import { Box, Button, Typography, useMediaQuery } from '@mui/material';
 import React from 'react';
-import { BgBoostMobile } from '../Components/BgBoostMobile';
-import { BgShortenDesktop } from '../Components/BgShortenDesktop';
 import { IllustrationWorking } from '../Components/IllustrationWorking';
 import { NavigationButtonsStyles } from '../Constants/Variables';
 
