@@ -1,22 +1,23 @@
-import { Box, Button, Typography, useMediaQuery } from '@mui/material';
-import React from 'react';
+import { Box, Typography, useMediaQuery } from '@mui/material';
 import { IllustrationWorking } from '../Components/IllustrationWorking';
-import { NavigationButtonsStyles } from '../Constants/Variables';
+import { PrimaryButton } from '../Components/PrimaryButton';
 
 export const Intro = () => {
-    const match = useMediaQuery('(min-width: 678px)');
+    const match = useMediaQuery('(min-width: 1024px)');
     return (
         <Box
             component={`section`}
             sx={{
                 display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
+                flexDirection: `${!match ? 'column' : 'row-reverse'}`,
+                alignItems: `${match ? 'end' : 'center'}`,
                 justifyContent: 'center',
+                padding: `${match && ' 0 0 20px 11.5%'}`,
+                marginTop: `${match ? '78px':'23px'}`
             }}
         >
             <IllustrationWorking
-                translateX={'24px'}
+                translateX={'0'}
                 width={`${match ? '733' : '327'}`}
                 height={`${match ? '482' : '270'}`}
             />
@@ -24,29 +25,28 @@ export const Intro = () => {
                 sx={{
                     display: 'flex',
                     flexDirection: 'column',
-                    alignItems: 'center',
+                    alignItems: `${match ? 'start':'center'}`,
+                    width: `${!match ? '327px':'564px'}`
                 }}
             >
-                <Typography component={`h1`}>
+                <Typography component={`h1`}
+                sx={{color: '#34313D',
+                fontWeight: '700',
+                lineHeight: `${!match ? '48px' : '90px'}`,
+                fontSize:  `${!match ? '42px': '80px'}`,
+                textAlign: `${!match ? 'center' : 'left'}`}}>
                     More than just shorter links
                 </Typography>
-                <Typography>
+                <Typography sx={{color: '#9E9AA8',
+                fontWeight: '500',
+                margin: `15px 0 32px`,
+                lineHeight: `${!match ? '30px' : '36px'}`,
+                 fontSize: `${!match ? '18px' : '22px'}`,
+                 textAlign: `${!match ? 'center' : 'left'}`}}>
                     Build your brand’s recognition and get detailed insights on
                     how your links are performing.
                 </Typography>
-                <Button
-                    sx={NavigationButtonsStyles({
-                        textColor: '#fff',
-                        backgroundColor: '#2BD0D0',
-                        height: '56px',
-                        width: '197px',
-                        radius: '5rem',
-                        padding: '1.2rem 4rem',
-                        fontSize: '2rem',
-                    })}
-                >
-                    Get Started
-                </Button>
+                <PrimaryButton/>
             </Box>
         </Box>
     );

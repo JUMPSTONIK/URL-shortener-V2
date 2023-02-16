@@ -4,7 +4,7 @@ import { Sitemap } from '../Components/Sitemap';
 import { SocialNetworks } from '../Components/SocialNetworks';
 
 export const Footer = () => {
-    const match = useMediaQuery('(min-width: 678px)');
+    const match = useMediaQuery('(min-width: 1024px)');
     return (
         <Box
             component={`footer`}

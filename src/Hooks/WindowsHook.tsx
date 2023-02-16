@@ -1,17 +1,29 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface WindowSize {
     width: number;
     height: number;
 }
 
-export const WindowsHook = () => {
-    const useWindowSize = (): WindowSize => {
+export const useWindowSize  = (): WindowSize => {
         const [windowSize, setWindowSize] = useState<WindowSize>({
             width: window.innerWidth,
             height: window.innerHeight,
         });
-    };
 
-    return <div>WindowsHook</div>;
+    useEffect(()=>{
+        const handleResize = () =>{
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
+            console.log(windowSize.width)
+        };
+        window.addEventListener("resize", handleResize)
+        return ()=>{
+            window.removeEventListener("resize", handleResize)
+        }
+    })
+
+    return windowSize;
 };

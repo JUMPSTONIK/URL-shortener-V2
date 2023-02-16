@@ -1,16 +1,14 @@
 import { Box } from '@mui/material';
 import './App.css';
-import { Boost } from './Containers/Boost';
 import { Footer } from './Containers/Footer';
 import { Header } from './Containers/Header';
-import { Intro } from './Containers/Intro';
+import { Main } from './Containers/Main';
 
 function App() {
     return (
-        <Box sx={{ minWidth: '320px', maxWidth: '1440px', margin: '0 auto' }}>
+        <Box sx={{ minWidth: '375px', maxWidth: '1440px', margin: '0 auto' }}>
             <Header />
-            <Intro />
-            <Boost />
+            <Main />
             <Footer />
         </Box>
     );

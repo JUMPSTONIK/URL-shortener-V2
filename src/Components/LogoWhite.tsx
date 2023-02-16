@@ -2,7 +2,7 @@ import { Box, useMediaQuery } from '@mui/material';
 import React from 'react';
 
 export const LogoWhite = () => {
-    const match = useMediaQuery('(min-width: 678px)');
+    const match = useMediaQuery('(min-width: 1024px)');
     return (
         <Box
             sx={{

@@ -5,7 +5,6 @@ import {
     MenuItem,
     useMediaQuery,
     IconButton,
-    Typography,
     Divider,
 } from '@mui/material';
 import { Button, Link } from '@mui/material';
@@ -30,7 +29,7 @@ export const Header = () => {
         setAnchorEl(null);
     };
 
-    const match = useMediaQuery('(min-width: 678px)');
+    const match = useMediaQuery('(min-width: 1024px)');
     return (
         <Box
             component={`header`}
@@ -90,7 +89,7 @@ export const Header = () => {
                                     height: '40px',
                                     width: '105px',
                                     radius: '5rem',
-                                    padding: '0.9rem 2.4rem',
+                                    padding: '',
                                     fontSize: '1.5rem',
                                 })}
                             >

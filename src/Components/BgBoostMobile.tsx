@@ -1,14 +1,12 @@
-import { Box } from '@mui/material';
-import React from 'react';
-
+import { useWindowSize } from '../Hooks/WindowsHook';
 export const BgBoostMobile = () => {
     return (
         <div
-            style={{ position: 'absolute', left: '0', top: '0', width: '100%' }}
+            style={{ position: 'absolute', left: '0', top: '0', width: '100%', zIndex: '-1' }}
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width={`${window.innerWidth}`}
+                width={`${useWindowSize().width}`}
                 height="300"
                 preserveAspectRatio="xMidYMid slice"
                 viewBox={`0 0 375 300`}

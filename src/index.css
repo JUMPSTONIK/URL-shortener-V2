@@ -2,11 +2,16 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 html {
     font-size: 62.5%;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+  }
 
 p,
 li {
@@ -14,6 +19,4 @@ li {
     font-weight: 500;
 }
 
-.MuiMenu-paper {
-    background-color: aqua;
-}
+

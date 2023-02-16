@@ -1,4 +1,7 @@
 import { buttonType } from '../types/buttonType';
+import { IconBrandRecognition } from '../Components/IconBrandRecognition';
+import { IconDetailedRecords } from '../Components/IconDetailedRecords';
+import { IconFullyCustomizable } from '../Components/IconFullyCustomizable';
 
 export const NavigationLinks = ['Features', 'Pricing', 'Resources'];
 export const NavigationLinksStylesDesk = {
@@ -35,3 +38,24 @@ export const menuItemStyles = {
     display: 'flex',
     justifyContent: 'center',
 };
+
+export const Cards = [
+    {
+    media : IconBrandRecognition,
+    verticalPosition: 'start',
+    title: `Brand Recognition`,
+    paragraph: 'Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.'
+},
+{
+    media : IconDetailedRecords,
+    verticalPosition: 'center',
+    title: `Detailed Records`,
+    paragraph: 'Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.'
+},
+{
+    media : IconFullyCustomizable,
+    verticalPosition: 'end',
+    title: `Fully Customizable`,
+    paragraph: 'Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.'
+}
+]

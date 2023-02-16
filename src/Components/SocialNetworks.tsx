@@ -6,7 +6,7 @@ import { Pinterest } from './Pinterest';
 import { Twitter } from './Twitter';
 
 export const SocialNetworks = () => {
-    const match = useMediaQuery('(min-width: 678px)');
+    const match = useMediaQuery('(min-width: 1024px)');
     return (
         <Box
             component={`div`}

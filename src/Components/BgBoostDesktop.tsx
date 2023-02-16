@@ -1,13 +1,17 @@
 import React from 'react';
+import { useWindowSize } from '../Hooks/WindowsHook';
 
 export const BgBoostDesktop = () => {
+
+    let size = useWindowSize().width
+    
     return (
         <div
-            style={{ position: 'absolute', left: '0', top: '0', width: '100%' }}
+            style={{ position: 'absolute', left: '0', top: '0', width: '100%', zIndex: '-1' }}
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="1440"
+                width={`${size >= 1440 ? 1440 : size}`}
                 height="250"
                 preserveAspectRatio="xMidYMid slice"
                 viewBox={`0 0 1440 250`}

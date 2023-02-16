@@ -3,7 +3,7 @@ import { Box, Typography, useMediaQuery } from '@mui/material';
 import { sitemapType } from '../types/sitemapType';
 
 export const Sitemap = (props: sitemapType) => {
-    const match = useMediaQuery('(min-width: 678px)');
+    const match = useMediaQuery('(min-width: 1024px)');
     return (
         <Box
             sx={{
