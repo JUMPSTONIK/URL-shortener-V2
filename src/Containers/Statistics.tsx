@@ -1,7 +1,6 @@
 import { Typography, useMediaQuery } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
-import { IconBrandRecognition } from '../Components/IconBrandRecognition';
 import { StatisticsCard } from '../Components/StatisticsCard';
 import { Cards } from '../Constants/Variables';
 
@@ -15,12 +14,14 @@ export const Statistics = () => {
         padding : `${match ? '0 11.5% 120px' : '0 24px 80px'}`,
         display: 'flex',
         flexDirection: 'column',
+        alignItems: 'center',
         gap: `${match ? '100px' : '92px'}`
     }}>
         <Box sx={{
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
+            width: `${match ? '540px': '335px'}`,
             gap: `${match ? '18px' : '16px'}`
         }}>
             <Typography sx={{
@@ -32,7 +33,7 @@ export const Statistics = () => {
                 textAlign: 'center',
                 fontSize: `${!match ? '1.8rem': '1.6rem'}`,
                 fontWeight: '500',
-                color: '#9E9AA8'
+                color: '#9E9AA8',
             }}>Track how your links are performing across the web with our 
   advanced statistics dashboard.</Typography>
         </Box>

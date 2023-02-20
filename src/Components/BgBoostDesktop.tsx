@@ -1,5 +1,5 @@
 import React from 'react';
-import { useWindowSize } from '../Hooks/WindowsHook';
+import { useWindowSize } from '../Hooks/useWindowSize';
 
 export const BgBoostDesktop = () => {
 

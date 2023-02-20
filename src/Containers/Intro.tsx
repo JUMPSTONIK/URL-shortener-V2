@@ -13,7 +13,8 @@ export const Intro = () => {
                 alignItems: `${match ? 'end' : 'center'}`,
                 justifyContent: 'center',
                 padding: `${match && ' 0 0 20px 11.5%'}`,
-                marginTop: `${match ? '78px':'23px'}`
+                marginTop: `${match ? '78px':'23px'}`,
+                overflow: 'hidden'
             }}
         >
             <IllustrationWorking

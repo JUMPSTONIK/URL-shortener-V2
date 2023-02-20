@@ -2,8 +2,12 @@ import React from 'react';
 
 export const BgShortenMobile = () => {
     return (
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="237" height="128">
+        <div style={{ position: 'absolute', left: '0', top: '0', width: '100%', zIndex: '-1' }}>
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                width={'100%'} 
+                height={'100%'}
+                preserveAspectRatio="xMidYMid slice"
+                viewBox={`0 0 237 128`}>
                 <path
                     fill="#4B3F6B"
                     fill-rule="evenodd"

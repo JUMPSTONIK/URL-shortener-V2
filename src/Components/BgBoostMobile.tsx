@@ -1,4 +1,4 @@
-import { useWindowSize } from '../Hooks/WindowsHook';
+import { useWindowSize } from '../Hooks/useWindowSize';
 export const BgBoostMobile = () => {
     return (
         <div

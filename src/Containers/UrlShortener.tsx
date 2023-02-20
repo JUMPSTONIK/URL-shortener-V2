@@ -1,29 +1,130 @@
-import { Box, useMediaQuery } from '@mui/material'
-import { display, height } from '@mui/system';
+import { Box, Button, TextField, useMediaQuery } from '@mui/material'
 import React from 'react'
-import { useWindowSize } from '../Hooks/WindowsHook';
+import { BgShortenDesktop } from '../Components/BgShortenDesktop';
+import { BgShortenMobile } from '../Components/BgShortenMobile';
+import { UrlCard } from '../Components/UrlCard';
+import { useUrlShortener } from '../Hooks/useUrlShortener';
+import { useWindowSize } from '../Hooks/useWindowSize';
 
 export const UrlShortener = () => {
     const match = useMediaQuery('(min-width: 1024px)');
-    let width = useWindowSize().width * 0.77
-    let height = '160px'
+    let desktopWidth = 1440 * 0.77;
+    let mobileWidth = useWindowSize().width * 0.77;
+    let width = useWindowSize().width > 1440 ? desktopWidth :  mobileWidth
+    let height = '160px';
+
+    const {
+      error,
+      urlCards,
+      handleOnChangeUrl,
+      submitShortUrl
+  } = useUrlShortener()
   return (
     <Box component={`section`} sx={{
         position: 'relative',
-        height: '500px',
+        height: 'fit-content',
         backgroundColor: '#EFF1F7',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '24px', 
+        margin: '68px 0 0 0',
+        padding: `${match ? '0 165px 120px' : '0 24px 80px'}`
     }}>
         <Box sx={{
+          position: 'absolute',
+          top: '0',
+          backgroundColor: 'white',
+          height: '80px',
+          width: '100%',
+          zIndex: '1'
+        }}/>
+        <Box sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             position: 'relative',
-            backgroundColor: '#4B3F6B',
-            width: `${match ? width : '327'}px`,
+            backgroundColor: '#3A3054',
+            minWidth: '327px',
+            width: `${match ? `${width}px` : '100%'}`,
+            maxWidth: `${!match ? '500px' : '1110px'}`,
             height,
-            borderRadius: '10px'
+            borderRadius: '10px',
+            zIndex: '2',
+            overflow: 'hidden',
+            gap: '24px'
         }}>
-
+          {match
+          ?
+          <BgShortenDesktop/>
+          :
+          <BgShortenMobile/>
+        }
+          {error
+          ?
+          <TextField
+            error
+            placeholder='Shorten a link here...'
+            helperText="Please add a link"
+            onChange={handleOnChangeUrl}
+            sx={{
+              '& input': {
+                background: '#fff',
+                borderRadius: '5px',
+                width: '741px',
+                height: '31.5px',
+                fontSize: '2rem'
+              },
+              '& p':{
+                fontSize: `${match ? '1.6rem' : '1.2rem'}`
+              }
+            }}
+          />
+          :
+          <TextField
+            placeholder='Shorten a link here...'
+            onChange={handleOnChangeUrl}
+            sx={{
+              '& input': {
+                background: '#fff',
+                borderRadius: '5px',
+                width: '741px',
+                height: '31.5px',
+                fontSize: '2rem'
+              },
+              '& p':{
+                fontSize: `${match ? '1.6rem' : '1.2rem'}`
+              } 
+            }}
+          />
+          }
+          <Button 
+            onClick={submitShortUrl}
+            style={{ backgroundColor: '#2BD0D0' }}
+            sx={{
+            color: '#fff',
+            backgroundColor: '#2BD0D0',
+            height: '64px',
+            width: '188px',
+            radius: '5rem',
+            borderRadius: '10px',
+            fontSize: '2rem',
+            fontWeight: '700',
+            textTransform: 'none'}}>Shorten It</Button>
+        </Box>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: `${match ? '16px' : '24px'}`,
+            height: 'fit-content',
+            width: '100%',
+          }}
+        >
+          {urlCards.map( card => <UrlCard width={width} originalUrl={card.originalUrl} shortUrl={card.shortUrl} />)}
         </Box>
     </Box>
   )
