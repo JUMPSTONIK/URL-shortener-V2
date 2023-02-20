@@ -6,7 +6,7 @@ import { Main } from './Containers/Main';
 
 function App() {
     return (
-        <Box sx={{ minWidth: '375px', maxWidth: '1440px', margin: '0 auto' }}>
+        <Box sx={{ minWidth: '375px' }}>
             <Header />
             <Main />
             <Footer />
