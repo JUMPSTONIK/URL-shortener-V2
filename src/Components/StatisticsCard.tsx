@@ -1,4 +1,4 @@
-import { Avatar, Box, Card, Typography, useMediaQuery } from '@mui/material'
+import { Avatar, Box, Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
 
 export const StatisticsCard = (props:any) => {
