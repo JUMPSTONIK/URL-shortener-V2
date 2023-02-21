@@ -21,7 +21,9 @@ export const Sitemap = (props: sitemapType) => {
                 {props.title}
             </Typography>
             {props.navigationPoints.map((navPoint) => (
-                <Typography sx={{ color: '#9E9AA8', fontSize: '1.5rem' }}>{navPoint}</Typography>
+                <Typography sx={{ color: '#9E9AA8', fontSize: '1.5rem', '&:focus': {
+                    color: '#2BD0D0'
+                  } }}>{navPoint}</Typography>
             ))}
         </Box>
     );

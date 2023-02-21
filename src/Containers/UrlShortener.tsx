@@ -12,7 +12,7 @@ export const UrlShortener = () => {
     let mobileWidth = useWindowSize().width * 0.77;
     let width = useWindowSize().width > 1440 ? desktopWidth : mobileWidth;
 
-    const { error, urlCards, handleOnChangeUrl, submitShortUrl } =
+    const { error, url, urlCards, handleOnChangeUrl, submitShortUrl } =
         useUrlShortener();
     return (
         <Box
@@ -72,6 +72,7 @@ export const UrlShortener = () => {
                             error
                             placeholder="Shorten a link here..."
                             helperText="Please add a link"
+                            value={url}
                             onChange={handleOnChangeUrl}
                             sx={{
                                 position: 'relative',
@@ -94,6 +95,7 @@ export const UrlShortener = () => {
                     ) : (
                         <TextField
                             placeholder="Shorten a link here..."
+                            value={url}
                             onChange={handleOnChangeUrl}
                             sx={{
                                 position: 'relative',
@@ -124,6 +126,9 @@ export const UrlShortener = () => {
                             fontSize: '2rem',
                             fontWeight: '700',
                             textTransform: 'none',
+                            '&:focus': {
+                              backgroundColor: '#9AE3E3'
+                            }
                         }}
                     >
                         Shorten It

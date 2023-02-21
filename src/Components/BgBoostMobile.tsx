@@ -1,4 +1,4 @@
-import { useWindowSize } from '../Hooks/useWindowSize';
+
 export const BgBoostMobile = () => {
     return (
         <div
@@ -6,7 +6,7 @@ export const BgBoostMobile = () => {
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width={`${useWindowSize().width}`}
+                width={`100%`}
                 height="300"
                 preserveAspectRatio="xMidYMid slice"
                 viewBox={`0 0 375 300`}

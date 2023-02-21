@@ -14,7 +14,10 @@ export const PrimaryButton = () => {
             borderRadius: '28px',
             fontSize: '2rem',
             fontWeight: '700',
-            textTransform: 'none'
+            textTransform: 'none',
+            '&:focus': {
+              backgroundColor: '#9AE3E3'
+            }
         }}
     >
         Get Started

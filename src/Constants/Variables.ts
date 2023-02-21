@@ -32,6 +32,9 @@ export const NavigationButtonsStyles = ({
     padding,
     fontSize,
     textAlign: 'center',
+    '&:focus': {
+        backgroundColor: '#9AE3E3'
+      }
 });
 
 export const menuItemStyles = {

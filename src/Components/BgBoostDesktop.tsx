@@ -1,8 +1,6 @@
 import React from 'react';
-import { useWindowSize } from '../Hooks/useWindowSize';
 
 export const BgBoostDesktop = () => {
-    let size = useWindowSize().width;
 
     return (
         <div

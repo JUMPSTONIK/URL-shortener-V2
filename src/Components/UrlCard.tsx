@@ -10,6 +10,9 @@ interface urlCardTypes {
 
 export const UrlCard = (props: urlCardTypes) => {
     const match = useMediaQuery('(min-width: 1024px)');
+    const handleCopy = (link:string) =>{
+    navigator.clipboard.writeText(link);
+    }
     return (
         <Box
             sx={{
@@ -30,7 +33,7 @@ export const UrlCard = (props: urlCardTypes) => {
             <Typography
                 sx={{
                     width: `${!match ? '100%' : 'fit-content'}`,
-                    maxWidth: '450px',
+                    maxWidth: `${match && '40%'}`,
                     wordWrap: 'break-word',
                     fontWeight: '500',
                     fontSize: `${match ? '2rem' : '1.6rem'}`,
@@ -45,7 +48,7 @@ export const UrlCard = (props: urlCardTypes) => {
             <Typography
                 sx={{
                     width: `${!match ? '100%' : 'fit-content'}`,
-                    maxWidth: '450px',
+                    maxWidth: `${match && '40%'}`,
                     wordWrap: 'break-word',
                     fontWeight: '500',
                     fontSize: `${match ? '2rem' : '1.6rem'}`,
@@ -56,6 +59,7 @@ export const UrlCard = (props: urlCardTypes) => {
                 {props.shortUrl}
             </Typography>
             <Button
+                onClick={() => handleCopy(props.shortUrl)}
                 style={{ backgroundColor: '#2BD0D0' }}
                 sx={{
                     color: '#fff',
@@ -67,6 +71,7 @@ export const UrlCard = (props: urlCardTypes) => {
                     fontSize: '2rem',
                     fontWeight: '700',
                     textTransform: 'none',
+                    
                 }}
             >
                 Copy
