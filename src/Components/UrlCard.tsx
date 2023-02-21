@@ -1,6 +1,6 @@
 import { Button, Divider, Typography, useMediaQuery } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react';
+import { useState } from 'react';
 
 interface urlCardTypes {
     originalUrl: string;
@@ -10,9 +10,12 @@ interface urlCardTypes {
 
 export const UrlCard = (props: urlCardTypes) => {
     const match = useMediaQuery('(min-width: 1024px)');
-    const handleCopy = (link:string) =>{
-    navigator.clipboard.writeText(link);
-    }
+    const [click, setClick] = useState(false);
+    const handleCopy = (link: string) => {
+        navigator.clipboard.writeText(link);
+        setClick(true);
+    };
+
     return (
         <Box
             sx={{
@@ -33,7 +36,7 @@ export const UrlCard = (props: urlCardTypes) => {
             <Typography
                 sx={{
                     width: `${!match ? '100%' : 'fit-content'}`,
-                    maxWidth: `${match && '40%'}`,
+                    minWidth: `${match && '40%'}`,
                     wordWrap: 'break-word',
                     fontWeight: '500',
                     fontSize: `${match ? '2rem' : '1.6rem'}`,
@@ -60,21 +63,22 @@ export const UrlCard = (props: urlCardTypes) => {
             </Typography>
             <Button
                 onClick={() => handleCopy(props.shortUrl)}
-                style={{ backgroundColor: '#2BD0D0' }}
+                style={{ backgroundColor: `${!click ? '#2BD0D0' : '#3A3054'}` }}
                 sx={{
                     color: '#fff',
-                    backgroundColor: '#2BD0D0',
+                    backgroundColor: `${!click ? '#2BD0D0' : '#3A3054'}`,
                     height: '40px',
-                    width: `${match ? '103px' : '100%'}`,
+                    width: `${match ? 'fit-content' : '100%'}`,
                     radius: '1.5rem',
                     borderRadius: '10px',
-                    fontSize: '2rem',
+                    fontSize: `${match ? '1.5rem' : '1.6rem'}`,
                     fontWeight: '700',
                     textTransform: 'none',
-                    
+                    padding: `${match ? '10px 21px' : '10px 115px'}`,
+                    textAlign: 'center',
                 }}
             >
-                Copy
+                {click ? 'Copied!' : 'Copy'}
             </Button>
         </Box>
     );

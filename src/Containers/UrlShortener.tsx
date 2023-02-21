@@ -127,8 +127,8 @@ export const UrlShortener = () => {
                             fontWeight: '700',
                             textTransform: 'none',
                             '&:focus': {
-                              backgroundColor: '#9AE3E3'
-                            }
+                                backgroundColor: '#9AE3E3',
+                            },
                         }}
                     >
                         Shorten It

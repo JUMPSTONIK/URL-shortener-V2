@@ -11,12 +11,10 @@ html {
 
 body::-webkit-scrollbar {
     display: none;
-  }
+}
 
 p,
 li {
     font-size: 1.8rem;
     font-weight: 500;
 }
-
-

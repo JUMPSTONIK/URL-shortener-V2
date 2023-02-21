@@ -16,14 +16,25 @@ export const Sitemap = (props: sitemapType) => {
         >
             <Typography
                 fontWeight={700}
-                sx={{ color: '#EFF1F7', marginBottom: '4px', fontSize: '1.5rem', }}
+                sx={{
+                    color: '#EFF1F7',
+                    marginBottom: '4px',
+                    fontSize: '1.5rem',
+                }}
             >
                 {props.title}
             </Typography>
             {props.navigationPoints.map((navPoint) => (
-                <Typography sx={{ color: '#9E9AA8', fontSize: '1.5rem', '&:focus': {
-                    color: '#2BD0D0'
-                  } }}>{navPoint}</Typography>
+                <Typography
+                    key={navPoint}
+                    sx={{
+                        color: '#9E9AA8',
+                        fontSize: '1.5rem',
+                        '&:hover': { color: '#2BD0D0' },
+                    }}
+                >
+                    {navPoint}
+                </Typography>
             ))}
         </Box>
     );

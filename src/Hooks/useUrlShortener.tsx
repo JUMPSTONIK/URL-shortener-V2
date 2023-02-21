@@ -10,7 +10,8 @@ export const useUrlShortener = () => {
 
     const isValidUrl = (url: string) => {
         // Regular expression for URL validation
-        const urlRegex = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_.~#?&=]*)$/;
+        const urlRegex =
+            /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
 
         // Test the input string against the regex
         return urlRegex.test(url);
@@ -41,7 +42,7 @@ export const useUrlShortener = () => {
                     ...urlCards,
                 ]);
                 setError(false);
-                setUrl('')
+                setUrl('');
             })
             .catch((err) => {
                 console.log(err);
